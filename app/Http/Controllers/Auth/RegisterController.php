@@ -51,8 +51,10 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'phone' => ['required', 'max:12', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'hood' => ['required'],
+
         ]);
     }
 
@@ -67,16 +69,16 @@ class RegisterController extends Controller
         // dd($data['role']);
         $user = User::create([
             'name' => $data['name'],
-            'email' => $data['email'],
+            // 'email' => 'example@gmail.com ',
             'password' => Hash::make($data['password']),
-            'hood_id' => '1'
+            'hood_id' => $data['hood'],
+            'phone' => $data['phone']
             
         ]);
+
         // don't forget the hoods
         if($data['role'] == "buyer") {
-            
-            
-    
+        
             $user->role_id = '1';
             $cart = new Cart();
             $cart->cart_user_id = $user->id;
@@ -91,7 +93,7 @@ class RegisterController extends Controller
 
             
         } else if($data['role'] == "delivery") {
-            $user->role_id = '2';
+            $user->role_id = '4';
             $user->save();
 
            

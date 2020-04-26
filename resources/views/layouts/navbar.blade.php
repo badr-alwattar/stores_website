@@ -69,6 +69,10 @@
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
+
+
+                        <a class="dropdown-item" href='/orders/{{Auth::user()->id}}/all'> All Orders</a>
+                        <a class="dropdown-item" href='/users/{{Auth::user()->id}}/edit'> Account Settings</a>
                         </div>
                     </li>
                 @endguest

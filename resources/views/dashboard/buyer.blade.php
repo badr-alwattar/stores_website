@@ -9,7 +9,7 @@
             @foreach($stores as $store)
                 <div class="col col-3 py-2">
                     <div class="card" >
-                        <img class="card-img-top" src="https://www.flaticon.com/premium-icon/icons/svg/2220/2220402.svg" alt="Card image cap">
+                        <img class="card-img-top" src='{{ $store->store_image }}' alt="Card image cap">
                         <div class="card-body">
                         <h5 class="card-title">{{ $store->name }}</h5>
                             <p class="card-text">{{ $store->about_store}}</p>

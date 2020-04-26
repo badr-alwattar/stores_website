@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'hood_id', 'role_id'
+        'name', 'password', 'hood_id', 'role_id', 'phone'
     ];
 
     /**
@@ -33,9 +33,9 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    // protected $casts = [
+    //     'email_verified_at' => 'datetime',
+    // ];
 
 
 
@@ -63,4 +63,10 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Product', 'user_id');
     }
+
+    public function orders()
+    {
+        return $this->belongsTo('App\Order');
+    }
+
 }

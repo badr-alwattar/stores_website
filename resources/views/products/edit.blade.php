@@ -4,7 +4,7 @@
  
         <h1 class="text-center"> Edit Product </h1>
         <div class="container">
-            {!! Form::open(['action' => ['ProductsController@update', $product->id], 'method' => 'POST']) !!}
+            {!! Form::open(['action' => ['ProductsController@update', $product->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
             <div class="form-group">
                 <div class="row">
                     <div class="col-sm" align="center" style="margin-top: 5px;"> 
@@ -26,7 +26,7 @@
                     {{Form::text('description', $product->description, ['class' => 'form-control', 'placeholder' => 'Description'])}}
                     </div>
                     <div class="col-sm" align="center" style="margin-top: 5px;"> 
-                    {{Form::text('imglink', $product->img, ['class' => 'form-control', 'placeholder' => 'Image Link'])}}
+                        <input id="img" type="file" class="form-control" name="img">
                     </div>
                     <div class="col-sm" align="center" style="margin-top: 5px;"> 
                     {{Form::number('instock', $product->instock, ['class' => 'form-control', 'placeholder' => 'In Stock', 'min' => '0'])}}

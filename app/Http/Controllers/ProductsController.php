@@ -40,7 +40,7 @@ class ProductsController extends Controller
             'price' => 'required',
             'description' => 'required',
             'state' => 'required',
-            // 'img' => 'required',
+            'img' => 'required | file | image | max:1000',
             'instock' => 'required'
         ]);
 
@@ -50,8 +50,14 @@ class ProductsController extends Controller
         $product->description = $request->input('description');
         $product->instock = $request->input('instock');
         $product->store_id = Auth::user()->store_id;
-        $imagelink = "https://image.flaticon.com/icons/svg/2829/2829788.svg";
-        $product->img = $imagelink;
+
+        if ($request->has('img')) {
+            
+            $product->img = $request->file('img')->store('public/products_images');
+            $product->img = substr($product->img, 7, strlen($product->img));
+            
+            
+        } 
 
         switch ($request->input('state')) {
             case '0':
@@ -82,6 +88,9 @@ class ProductsController extends Controller
         return view('products.show')->with('product', $product);
     }
 
+
+    
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -108,7 +117,7 @@ class ProductsController extends Controller
             'price' => 'required',
             'description' => 'required',
             'state' => 'required',
-            // 'img' => 'required',
+            'img' => ' file | image | max:1000',
             'instock' => 'required'
         ]);
         
@@ -118,13 +127,19 @@ class ProductsController extends Controller
         $product->description = $request->input('description');
         $product->instock = $request->input('instock');
         $product->store_id = Auth::user()->store_id;
-        if($request->input('img') != null) {
-            $imagelink = $request->input('img');
-        } else {
-            $imagelink = "https://image.flaticon.com/icons/svg/2829/2829788.svg";
+
+
+        if ($request->has('img')) {
+
+            if( $product->img != null) {
+                Storage::delete('public/' . $product->img);
+            }
+            
+            $product->img = $request->file('img')->store('public/products_images');
+            $product->img = substr($product->img, 7, strlen($product->img));   
         }
         
-        $product->img = $imagelink;
+        
 
         switch ($request->input('state')) {
             case '0':

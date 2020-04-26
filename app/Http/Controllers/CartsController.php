@@ -16,8 +16,16 @@ class CartsController extends Controller
 
         $products = Cart::find($id)->products;
         // dd($cart->products);
-       
-        return view('carts.show')->with('products', $products);
+        $orders = Order::where('user_id', Auth::user()->id)->get();
+        $showcart = "show";
+        foreach ($orders as $order) {
+            if($order->status == null) {
+                $showcart = "hide";
+                break; 
+            }
+        }
+        // dd($showcart);
+        return view('carts.show')->with('products', $products)->with('showcart', $showcart);
     }
 
 
@@ -104,19 +112,19 @@ class CartsController extends Controller
         $order = new Order();
         $order->user_id = Auth::user()->id;
         $order->total = $total;
-        // $order->save();
+        $order->save();
         foreach($products as $product) {
 
             $order_product = DB::table('order_product')->insert(
-                ['order_id' => 1,
+                ['order_id' => $order->id,
                  'product_id' => $product->id,
                  'count' => $product->pivot->count]
             );
         }
         $products = null;
 
-        $products = Order::find(1)->products;
-        
+        $products = Order::find($order->id)->products;
+        // dd($products);
         foreach($products as $product) {
             foreach($product->orders as $order) {
                 $user = User::find($order->user_id);
@@ -127,6 +135,23 @@ class CartsController extends Controller
 
 
         // dd($products);
-        return view('orders.show')->with('products', $products)->with('user',$user);
+        return redirect('/orders/show')->with('products', $products)->with('user',$user)->with('order', $order);
+    }
+
+
+
+    public function deleteProduct(Request $requset ) {
+
+        
+
+        // $product = Product::find($requset->input('product-id'));
+        $product=DB::table('cart_product')
+        ->where('cart_product.product_id','=',$requset->input('product-id'))
+        ->where('cart_product.cart_id', '=', Auth::user()->cart_id)
+        ->delete();
+
+        return back();
+        
+
     }
 }

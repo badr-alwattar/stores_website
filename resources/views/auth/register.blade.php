@@ -15,7 +15,7 @@
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autofocus>
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -25,7 +25,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
@@ -37,24 +37,32 @@
                                     </span>
                                 @enderror
                             </div>
+                        </div> --}}
+
+
+                        <div class="form-group row">
+                            <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="phone" type="tel" class="form-control" name="phone" placeholder="example: 966xx-xxxx-xxx" pattern="[9]{1}[6]{1}[6]{1}[0-9]{9}" required >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Neiborhood') }}</label>
+
+                            <div class="col-md-6">
+                                <select class="form-control" name="hood">
+                                    @foreach ($neighborhoods as $neighborhood)
+                                <option value='{{ $neighborhood->id }}'> {{ $neighborhood->neighborhood }} </option>
+                                    @endforeach
+                                    
+                                   
+                                  </select>
+                            </div>
                         </div>
 
 
-                        {{-- <div class="form-group row justify-content-center">
-                            
-
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="sel1">Select list:</label>
-                                    <select class="form-control" id="sel1">
-                                      <option>1</option>
-                                      <option>2</option>
-                                      <option>3</option>
-                                      <option>4</option>
-                                    </select>
-                                  </div> 
-                            </div>
-                        </div> --}}
+                        
 
                         
 

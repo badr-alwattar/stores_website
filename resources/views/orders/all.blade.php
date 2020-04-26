@@ -4,7 +4,7 @@
 
     
 <div class="container">
-    @if( !empty($orders) )
+    @if($orders->count() > 0)
         <table class="table">
             <thead>
             <tr>
@@ -12,7 +12,7 @@
                 <th scope="col">Status</th>
                 <th scope="col">Total</th>
                 <th scope="col">Time</th>
-                <th scope="col">Deliver</th>
+                <th scope="col">More</th>
             </tr>
             </thead>
             <tbody>
@@ -22,7 +22,7 @@
                         <td>{{ $order->status }}</td>
                         <td>{{ $order->total }}</td>
                         <td>{{ $order->created_at }}</td>
-                        <td> <a href="#">Take Order</a> </td>
+                        <td> <a>Details</a> </td>
                     </tr>
                 @endforeach
             </tbody>

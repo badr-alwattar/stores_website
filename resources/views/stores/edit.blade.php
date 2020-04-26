@@ -11,7 +11,7 @@
                     {{Form::text('name', $store->name, ['class' => 'form-control', 'placeholder' => 'Store name'])}}
                     </div>
                     <div class="col-sm" align="center mt-1"> 
-                        {{Form::text('phone', $store->phone, ['class' => 'form-control', 'placeholder' => 'Phone Number'])}}
+                        {{Form::text('phone', $store->phone, ['class' => 'form-control', 'placeholder' => 'Phone Number', 'disabled' => 'disabled'])}}
                     </div>
                     
                 </div>
@@ -21,6 +21,14 @@
                 <div class="row">
                     <div class="col-sm mt-1" align="center"> 
                         {{Form::text('about_store', $store->about_store, ['class' => 'form-control', 'placeholder' => 'About Store'])}}
+                    </div>
+
+                    <div class="col-sm mt-1" align="center"> 
+                        <select class="form-control" name="category">
+                            @foreach ($categories as $category)
+                                <option value='{{ $category->id }}'> {{ $category->name }} </option>
+                            @endforeach    
+                        </select>            
                     </div>
                 </div>
             

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Store;
 use App\Product;
 use App\User;
+use App\Category;
 use Auth;
 class StoresController extends Controller
 {
@@ -26,7 +27,8 @@ class StoresController extends Controller
      */
     public function create()
     {
-        return view('stores.create');
+        $categories = Category::all();
+        return view('stores.create')->with('categories', $categories);
     }
 
     /**
@@ -40,23 +42,22 @@ class StoresController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'about_store' => 'required',
-            'phone' => 'required',
-            // 'img' => 'required',
+            // 'phone' => 'required',
+            'category' => 'required'
+            
         ]);
         $user = User::find(Auth::user()->id);
         $store = new Store();
         $store->name = $request->input('name');
-        $store->phone = $request->input('phone');
+        $store->phone = Auth::user()->phone;
         $store->store_user_id = $user->id;
         $store->store_hood_id = $user->hood_id;
         $store->about_store = $request->input('about_store');
 
-        if($request->input('img') != null) {
-            $imagelink = $request->input('img');
-        } else {
-            $imagelink = "https://image.flaticon.com/icons/svg/2829/2829788.svg";
-        }
-        $store->store_image = $imagelink;
+        // $imagelink = "https://image.flaticon.com/icons/svg/2829/2829788.svg";
+        $category = Category::find($request->input('category'));
+            
+        $store->store_image = $category->img;
         $store->save();
         
 
@@ -89,7 +90,8 @@ class StoresController extends Controller
     public function edit($id)
     {
         $store = Store::find($id);
-        return view('stores.edit')->with('store', $store);
+        $categories = Category::all();
+        return view('stores.edit')->with('store', $store)->with('categories', $categories);
     
     }
 
@@ -105,17 +107,20 @@ class StoresController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'about_store' => 'required',
-            'phone' => 'required',
+            // 'phone' => 'required',
+            'category' => 'required'
             // 'img' => 'required',
         ]);
         $user = User::find(Auth::user()->id);
         $store = Store::find($id);
         $store->name = $request->input('name');
-        $store->phone = $request->input('phone');
+        $store->phone = Auth::user()->phone;
         $store->store_user_id = $user->id;
         $store->store_hood_id = $user->hood_id;
         $store->about_store = $request->input('about_store');
-        $store->store_image = "https://image.flaticon.com/icons/svg/2829/2829788.svg";
+        
+        $category = Category::find($request->input('category'));
+        $store->store_image = $category->img;
         $store->save();
         
         return redirect('/');
