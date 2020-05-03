@@ -95,7 +95,7 @@ This project was a participation in a Hackathon to propose solutions to the prob
 
 
 > install it on your machine
-1) `git clone "THE LINK"`
+1) `git clone https://github.com/badr-alwattar/stores_website.git`
 2) `cd stores_website`
 3) change the database name in `.env` file - rename it first from `example.env` to `.env`
 4) `php artisan migrate --seed`
