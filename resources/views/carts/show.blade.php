@@ -10,7 +10,7 @@
             <div class="row py-3 mx-4 my-4 justify-content-center border">
                 
                 <div class="col col-2 text-center">
-                    <img class="card-img-top " style="width:50%" align="center" src="https://image.flaticon.com/icons/svg/2826/2826356.svg" alt="Card image cap">                        
+                    <img class="card-img-top " style="width:90%" align="center" src='/storage/{{ $product->img }}' alt="Card image cap">                        
                 </div>
 
                 <div class="col col-9 ">

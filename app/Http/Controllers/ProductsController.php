@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use Auth;
+use Storage;
 class ProductsController extends Controller
 {
     /**
@@ -73,7 +74,7 @@ class ProductsController extends Controller
 
         $product->save();
 
-        return redirect('/');
+        return redirect('/home');
     }
 
     /**
@@ -155,7 +156,7 @@ class ProductsController extends Controller
 
         $product->save();
         
-        return redirect('/');
+        return redirect('/home');
     }
 
     /**

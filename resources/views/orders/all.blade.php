@@ -22,7 +22,7 @@
                         <td>{{ $order->status }}</td>
                         <td>{{ $order->total }}</td>
                         <td>{{ $order->created_at }}</td>
-                        <td> <a>Details</a> </td>
+                        <td> <a href="#">Details</a> </td>
                     </tr>
                 @endforeach
             </tbody>

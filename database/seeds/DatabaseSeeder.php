@@ -61,26 +61,12 @@ class DatabaseSeeder extends Seeder
         ]);
         
         DB::table('categories')->insert([
-            'name' => 'Plumbing',
+            'name' => 'Electric',
             'img' => 'https://image.flaticon.com/icons/svg/1179/1179267.svg'
         ]);
         
 
         
-        DB::table('users')->insert([
-            'name' => 'seller',
-            'phone' => '966000000000',
-            'password' => Hash::make('123456789'),
-            'role_id' => '2',
-            'hood_id' => '1',
-        ]);
 
-        DB::table('users')->insert([
-            'name' => 'buyer',
-            'phone' => '966000000001',
-            'password' => Hash::make('123456789'),
-            'role_id' => '1',
-            'hood_id' => '1',
-        ]);
     }
 }

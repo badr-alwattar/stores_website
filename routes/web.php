@@ -1,5 +1,5 @@
 <?php
-
+use App\Category;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return redirect('login');
+    $categories = Category::all();
+    return view('welcome')->with('categories', $categories);
 });
 
 Auth::routes();

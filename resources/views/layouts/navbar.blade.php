@@ -3,8 +3,12 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm px-4">
     {{-- <div class="container"> --}}
         <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Bytek') }}
+            <img src="https://i.pinimg.com/originals/f3/a2/84/f3a284df1dfd84822b7686aaa29fef1f.png"  height="50" width="50" alt="..." class="image">
+            {{-- <img class="card-img-top p-1"  align="center" src='/storage/{{ $product->img }}' alt="Card image cap"> --}}
         </a>
+        {{-- <a class="navbar-brand" href="{{ url('/') }}">
+            {{ config('app.name', 'Bytek') }}
+        </a> --}}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -14,6 +18,7 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     @if(Auth::check())
+                    <a href="#"><a href='/home' class="btn btn-outline-light "  >  Stores  </a></a>
                         @if(Auth::user()->role_id == 2 && Auth::user()->store_id == null)
                             <a href="#"><a href="/stores/create" class="btn btn-outline-success "  >  Create Store  </a></a>
                         @endif
@@ -46,11 +51,11 @@
                 @if(Auth::check())
                     @if (Auth::user()->role_id == 1)
                     <li class="nav-item">
-                    <a href="#"><a href='/carts/{{Auth::user()->cart_id}}' class="btn btn-success mr-2">  Show Cart  </a></a>
+                    <a href="#"><a href='/carts/{{Auth::user()->cart_id}}' class="btn btn-success mr-2 my-1">  Show Cart  </a></a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#"><a href='/orders/show' class="btn btn-primary mr-2">  Show Order  </a></a>
+                        <a href="#"><a href='/orders/show' class="btn btn-primary mr-2 my-1">  Show Order  </a></a>
                         </li>
                     @endif
                 @endif
@@ -84,13 +89,4 @@
 
 
 
-    <div class="row py-4 px-4">
-        <div class="col">
-            @if(Auth::check())
-                @if(Auth::user()->role_id == 2 && Auth::user()->store_id != null)
-                    <a href="#"><a href='/products/create' class="btn btn-success align-right mb-3"  >  Add product  </a></a>
-                @endif
-            @endif
-        </div>
-    </div>
-
+    

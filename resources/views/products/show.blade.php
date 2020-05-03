@@ -8,7 +8,7 @@
             <div class="col-sm-3 mt-2 text-center" >
             <div class="card">
                 <div class="text-center">
-                    <img class="card-img-top " style="width:50%" align="center" src="https://image.flaticon.com/icons/svg/2826/2826356.svg" alt="Card image cap">
+                    <img class="card-img-top " style="width:50%" align="center" src="/storage/{{ $product->img }}" alt="Card image cap">
                 </div>
                 <div class="card-block">
                     <br>

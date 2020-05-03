@@ -16,7 +16,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-    <link rel="icon" href="https://drive.google.com/uc?export=view&id=1bdp5le-zLMnEXyFOFQveY77CTqkWzZr9">
+    <link rel="icon" href="https://i.pinimg.com/originals/f3/a2/84/f3a284df1dfd84822b7686aaa29fef1f.png">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,7 +24,7 @@
 <body>
     
         @include('layouts.navbar')
-
+        
         <main class="py-4">
             @yield('content')
         </main>
