@@ -14,80 +14,80 @@ This project was a participation in a Hackathon to propose solutions to the prob
 
 ##### supplier account creation
 ###### fill the form and submit
-[image 2]
+![2](stores_website/2.png)
 
 
 ##### supplier dashboard [before having a store]
 ###### click on create store
-[image 3]
+![3](stores_website/3.png)
 
 
-## store creation form
-fill the form and submit
-[image 4]
+##### store creation form
+###### fill the form and submit
+![4](stores_website/4.png)
 
 
-## supplier account dashboard [after having a store]
-###click on add product
-[image 5]
+##### supplier account dashboard [after having a store]
+###### click on add product
+![5](stores_website/5.png)
 
 
-## adding product form [square images are prefared]
-fill the form then submit
-[image 6]
+##### adding product form [square images are prefared]
+###### fill the form then submit
+![6](stores_website/6.png)
 
 
-## the store
-logout and create buyer account
-[image 7]
+##### the store
+###### logout and create buyer account
+![7](stores_website/7.png)
 
 
-## creating buyer account [same hood]
-fill the form then submit
-[image 8]
+##### creating buyer account [same hood]
+###### fill the form then submit
+![8](stores_website/8.png)
 
 
-## buyer account dashboard
-can see only stores in the same hood
-[image 9]
+##### buyer account dashboard
+###### can see only stores in the same hood
+![9](stores_website/9.png)
 
 
-## store products
-here the buyer can see the products and fill his cart
-[image 10]
+##### store products
+###### here the buyer can see the products and fill his cart
+![10](stores_website/10.png)
 
 
-## buyer cart
-here is the products will be listed in the cart
-[image 11]
+##### buyer cart
+###### here is the products will be listed in the cart
+![11](stores_website/11.png)
 
 
-## quantity added ( + )
-if the buyer wants two panadol extra he can add and remove
-[image 12]
+##### quantity added ( + )
+###### if the buyer wants two panadol extra he can add and remove
+![12](stores_website/12.png)
 
 
-## after checkout and the address is added
-[image 13]
+##### after checkout and the address is added
+![13](stores_website/13.png)
 
 
-## check the order form All Orders page
-[image 14]
+##### check the order form All Orders page
+![14](stores_website/14.png)
 
 
-## All Orders page
-the order is "pending" waiting for a dilevery guy to take it, logout and register as a dilevery guy
-[image 15]
+##### All Orders page
+###### the order is "pending" waiting for a dilevery guy to take it, logout and register as a dilevery guy
+![15](stores_website/15.png)
 
 
-## creating dilevery account [same hood]
-fill the form then submit
-[image 16]
+##### creating dilevery account [same hood]
+###### fill the form then submit
+![16](stores_website/16.png)
 
 
-## dilevery account dashboard
-can see only orders in the same hood
-[image 17]
+##### dilevery account dashboard
+###### can see only orders in the same hood
+![17](stores_website/17.png)
 
 > requirements
 1) composer (laravel)
