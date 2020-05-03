@@ -1,6 +1,6 @@
 > about the project
-This website links three types of people [normal people - store owners - delivery guys]. and divide the city into hoods. each store will register in a hood and the normal person will also register in a hood, and finally, the delivery man will also register in the same hood. the registered account in hood1 can't see the accounts registered in hood2.
 
+This website links three types of people [normal people - store owners - delivery guys]. and divide the city into hoods. each store will register in a hood and the normal person will also register in a hood, and finally, the delivery man will also register in the same hood. the registered account in hood1 can't see the accounts registered in hood2.
 This project was a participation in a Hackathon to propose solutions to the problems that occurred after COVID-19, this project is the solution for the stores closing
 
 
