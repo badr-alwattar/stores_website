@@ -6,14 +6,14 @@ This project was a participation in a Hackathon to propose solutions to the prob
 
 >How does the project work:
 
-## landing page of the project
-###click on Register
+##### landing page of the project
+###### click on Register
 ![1](stores_website/1.png)
 
 
 
-## supplier account creation
-###fill the form and submit
+####### supplier account creation
+### fill the form and submit
 [image 2]
 
 
