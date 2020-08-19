@@ -97,9 +97,11 @@ This project was a participation in a Hackathon to propose solutions to the prob
 > install it on your machine
 1) `git clone https://github.com/badr-alwattar/stores_website.git`
 2) `cd stores_website`
-3) change the database name in `.env` file - rename it first from `example.env` to `.env`
-4) `php artisan migrate --seed`
-5) `php artisan migrate serve`
+3) `composer install`
+4) change the database name in `.env` file - rename it first from `example.env` to `.env`
+5) probably you need to `php artisan key:generate`
+5) `php artisan migrate --seed`
+6) `php artisan serve`
 
 
 
